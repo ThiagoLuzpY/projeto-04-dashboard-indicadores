@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 🔥 Agora vai funcionar porque o contexto é a raiz
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY backend/dashboard /app/dashboard
+COPY backend /app/backend
+
+CMD ["streamlit", "run", "backend/dashboard/app_dashboard.py", "--server.port=8501", "--server.address=0.0.0.0"]

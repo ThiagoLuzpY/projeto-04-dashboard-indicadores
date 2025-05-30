@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      - API_URL=http://backend:8000
+
+  dashboard:
+    build:
+      context: .             # 🔥 Mudei de ./backend/dashboard para .
+      dockerfile: backend/dashboard/Dockerfile.dashboard
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      - API_URL=http://backend:8000
