@@ -16,7 +16,7 @@ Este projeto é um sistema completo para **análise de indicadores** a partir de
 ---
 
 ## 🗂️ Estrutura de Pastas
-
+```
 projeto-04-dashboard-indicadores/
 ├── backend/
 │   ├── api/
@@ -69,7 +69,7 @@ projeto-04-dashboard-indicadores/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
-
+```
 
 
 
@@ -95,41 +95,36 @@ projeto-04-dashboard-indicadores/
 ## 🚀 Como Executar Localmente (sem Docker)
 
 1️⃣ Ative seu ambiente virtual:  
-```bash
+```
 python -m venv venv
 source venv/bin/activate  # ou .\venv\Scripts\activate no Windows
-
+```
 
 2️⃣ Instale as dependências:
 
-bash
-Copiar
-Editar
+```
 pip install -r requirements.txt
-
+```
 
 3️⃣ Rode o backend (FastAPI):
 
-bash
-Copiar
-Editar
-uvicorn backend.main:app --reload
+```uvicorn backend.main:app --reload```
 
 
 4️⃣ Rode o dashboard (Streamlit):
 
-streamlit run backend/dashboard/app_dashboard.py
+```streamlit run backend/dashboard/app_dashboard.py```
 
 Acesse:
 
-API Docs: http://127.0.0.1:8000/docs
+```API Docs: http://127.0.0.1:8000/docs```
 
-Dashboard: http://localhost:8501
+```Dashboard: http://localhost:8501```
 
 
 🐳 Como Executar com Docker Compose
 
-docker compose up --build
+```docker compose up --build```
 
 
 Pronto! O Compose vai subir dois serviços:
@@ -143,17 +138,17 @@ Usuários fictícios estão em backend/auth/users.py.
 
 Use credenciais como:
 
-Usuário: admin
+```Usuário: admin```
 
-Senha: admin123
+```Senha: admin123```
 
 🔍 Funcionalidades
 ✅ Upload seguro de CSV pela API (/upload).
 ✅ Pipeline ETL automático:
 
-extractor.py: leitura e encoding automático
+```extractor.py: leitura e encoding automático```
 
-transformer.py: limpeza e padronização
+```transformer.py: limpeza e padronização```
 
 loader.py: persistência via ORM
 ✅ Endpoints de consulta (/etl-data, /kpi).
@@ -183,5 +178,5 @@ Ideal para:
 ⚡ Desenvolvedores que queiram exemplos reais de integração entre FastAPI e Streamlit
 
 👤 Autor e Contato
-🚀 Feito por Thiago, com consultoria de 🥷 Jake (AI coding ninja)
-📧 [Seu e-mail ou LinkedIn]
+```🚀 Feito por Thiago```
+```📧 thiago.luz.silva1@gmail.com```
