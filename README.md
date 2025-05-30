@@ -19,24 +19,57 @@ Este projeto é um sistema completo para **análise de indicadores** a partir de
 
 projeto-04-dashboard-indicadores/
 ├── backend/
-│ ├── api/ # Rotas da API
-│ ├── auth/ # Autenticação e segurança (JWT)
-│ ├── dashboard/ # Código do dashboard (Streamlit)
-│ │ ├── app_dashboard.py
-│ │ ├── core_services.py
-│ │ └── utils/ # Filtros e estilos do dashboard
-│ ├── etl/ # Pipeline ETL (extract, transform, load)
-│ ├── models/ # Modelos ORM (SQLAlchemy)
-│ └── main.py # Ponto de entrada da API FastAPI
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes.py
+│   │
+│   ├── auth/
+│   │   ├── __init__.py
+│   │   ├── security.py
+│   │   └── users.py
+│   │
+│   ├── dashboard/
+│   │   ├── __init__.py
+│   │   ├── app_dashboard.py
+│   │   ├── core_services.py
+│   │   ├── data_helpers.py
+│   │   ├── style_config.py
+│   │   └── Dockerfile.dashboard
+│   │
+│   ├── etl/
+│   │   ├── __init__.py
+│   │   ├── etl_pipeline.py
+│   │   ├── extractor.py
+│   │   ├── loader.py
+│   │   └── transformer.py
+│   │
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── etl_data.py
+│   │   ├── forecast.py
+│   │   ├── kpi.py
+│   │   ├── main.py
+│   │   └── Dockerfile.backend
+│   │
+│   └── main.py
 │
-├── tests/ # Testes automatizados com pytest
-├── temp_uploads/ # Arquivos temporários carregados via API
-├── data.db # Banco SQLite
-├── Dockerfile.backend # Dockerfile para o backend
-├── dashboard/Dockerfile.dashboard # Dockerfile para o dashboard
-├── docker-compose.yml # Orquestração com Docker Compose
-├── requirements.txt # Dependências do projeto
-└── README.md # Este arquivo!
+├── temp_uploads/           # Pasta para arquivos CSV temporários
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_api.py
+│   ├── test_etl.py
+│   ├── test_models.py
+│   └── test_etl_script.py
+│
+├── data.db                 # Banco SQLite local
+├── docker-compose.yml
+├── Dockerfile              # (opcional) Dockerfile base para personalização
+├── README.md
+├── requirements.txt
+└── .gitignore
+
 
 
 
