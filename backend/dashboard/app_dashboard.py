@@ -2,12 +2,20 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import requests
+import os
+from core_services import fetch_kpis, fetch_etl_data
+
 
 # ⬇️ Imports relativos corrigidos
 from utils.data_helpers import filter_dataframe
 from utils.style_config import inject_custom_css
 
-API_URL = "http://127.0.0.1:8000"
+import os
+
+API_URL = os.getenv("API_URL")
+if not API_URL:
+    API_URL = "http://127.0.0.1:8000"
+API_URL = API_URL.rstrip("/")
 
 # ⚙️ Config inicial
 st.set_page_config(page_title="Dashboard Analítico", layout="wide")

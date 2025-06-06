@@ -10,7 +10,10 @@ from requests.exceptions import RequestException
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
 # 🎯 Config fixo para ambiente local (sem .env)
-API_URL = os.getenv("API_URL", "http://127.0.0.1:8000").rstrip("/")
+API_URL = os.getenv("API_URL")
+if not API_URL:
+    API_URL = "http://127.0.0.1:8000"
+API_URL = API_URL.rstrip("/")
 
 # Retry config
 MAX_RETRIES = 3
